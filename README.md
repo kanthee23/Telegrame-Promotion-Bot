@@ -76,10 +76,7 @@ python bot.py
 docker build -t telegram-promo-bot .
 
 ### Run container
-docker run -d \
-  --name telegram-promo-bot \
-  -e BOT_TOKEN=YOUR_TELEGRAM_BOT_TOKEN \
-  telegram-promo-bot
+docker run -d  --name telegram-promo-bot --restart unless-stopped -e BOT_TOKEN="ADD YOUR BOT TOKEN" -e ADMIN_ID="ADD YOUR ADMIN ID" -v $(pwd)/data:/app/data  telegram-promo-bot
 
 ### View logs
 docker logs -f telegram-promo-bot
@@ -126,4 +123,5 @@ If you need:
 Contact the maintainer or extend the codebase.
 
 ## ✅ Production-ready. Docker-safe. Clean architecture.
+
 
